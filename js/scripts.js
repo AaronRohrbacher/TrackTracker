@@ -11,7 +11,7 @@ $(document).ready(function(){
     var rubyImage = "<img src='img/ruby.png' alt='ruby'><img src='img/rails.png' alt='rails'>";
     var cSharpImage = "<img src='img/csharp.png' alt='C Sharp'><img src='img/net.png' alt='.NET'>";
     var javaImage = "<img src='img/java.png' alt='java'><img src='img/android.png' alt='android'>";
-    var phpImage = "<img src='img/php.png' alt='php'><img src='img/drupal.png' alt='drupal'>";
+    var phpImage = "<img src='img/php.png' alt='php' width='100px'><img src='img/drupal.png' alt='drupal' width='100px'>";
 
     var collectData = function(surveyResponse) {
       if (surveyResponse === "ruby") {
@@ -44,13 +44,13 @@ $(document).ready(function(){
         var suggestedTrack = "C#/.NET";
         var trackImage = cSharpImage;
       } else if (java > php && java > ruby && java > cSharp) {
-        var suggestedTrack = "Java";
+        var suggestedTrack = "Java/Android";
         var trackImage = javaImage;
       } else if (php > ruby && php > cSharp && php > java) {
-        var suggestedTrack = "PHP";
+        var suggestedTrack = "PHP/Drupal";
         var trackImage = phpImage;
       } else if (!suggestedTrack) {
-        $("#noMatch").slideToggle(2000, function() {
+        $("#noMatch").slideToggle(1000, function() {
         });
         $("#noMatch").append("<ul><li><img src='img/ruby.png'> Ruby on Rails: "+ruby+" out of 5</li><li><img src='img/csharp.png'> C#/.NET: "+cSharp+" out of 5</li><li><img src='img/php.png' width='100px'> PHP/Drupal: "+php+" out of 5</li><li><img src='img/java.png'> Java/Android: "+java+" out of 5</li></ul>");
       }
@@ -58,7 +58,7 @@ $(document).ready(function(){
       if (suggestedTrack){
         $("#trackImages").append(trackImage);
         $("#suggestedTrack").text(suggestedTrack);
-        $("#surveyOutput").slideToggle(2000, function() {
+        $("#surveyOutput").slideToggle(1000, function() {
         });
       }
       $(".name").text(name);
