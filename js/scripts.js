@@ -5,7 +5,7 @@ $(document).ready(function(){
     var cSharp = 0;
     var java = 0;
     var php = 0;
-
+    var suggestedTrack = null;
     var collectData = function(surveyResponse) {
       if (surveyResponse === "ruby") {
         ruby ++;
@@ -30,17 +30,23 @@ $(document).ready(function(){
     collectData(conType);
 
     if (ruby > cSharp && ruby > java && ruby > php){
-      var suggestedTrack = "Ruby on Rails"
+      var suggestedTrack = "Ruby on Rails";
     } else if (cSharp > java && cSharp > php && cSharp > ruby) {
-      var suggestedTrack = "C#/.NET"
+      var suggestedTrack = "C#/.NET";
     } else if (java > php && java > ruby && java > cSharp) {
-      var suggestedTrack = "Java"
+      var suggestedTrack = "Java";
     } else if (php > ruby && php > cSharp && php > java) {
-      var suggestedTrack = "PHP"
+      var suggestedTrack = "PHP";
+    } else if (!suggestedTrack) {
+      $("#noMatch").slideToggle(2000, function() {
+      });
+      $("#noMatch").append("<ul><li>Ruby on Rails: "+ruby+" out of 5</li><li>C#/.NET: "+cSharp+" out of 5</li><li>PHP: "+php+" out of 5</li><li>Java/Android: "+java+" out of 5</li></ul>");
     }
     $("#surveyForm").hide();
-    $("#suggestedTrack").text(suggestedTrack);
-    $("#surveyOutput").slideToggle(2000, function() {
-    });
+    if (suggestedTrack){
+      $("#suggestedTrack").text(suggestedTrack);
+      $("#surveyOutput").slideToggle(2000, function() {
+      });
+    }
   });
 });
