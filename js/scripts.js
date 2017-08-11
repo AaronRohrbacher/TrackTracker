@@ -11,16 +11,26 @@ $(document).ready(function(){
         ruby ++;
       } else if (surveyResponse === "cSharp") {
         cSharp ++;
+      } else if (surveyResponse === "java") {
+        java ++;
+      } else if (surveyResponse === "php") {
+        php++;
       }
     }
 
     var workType = $("input:radio[name=workType]:checked").val();
     collectData(workType);
+    var appType = $("input:radio[name=appType]:checked").val();
+    collectData(appType);
 
     if (ruby > cSharp && ruby > java && ruby > php){
       var suggestedTrack = "Ruby on Rails"
     } else if (cSharp > java && cSharp > php && cSharp > ruby) {
       var suggestedTrack = "C#/.NET"
+    } else if (java > php && java > ruby && java > cSharp) {
+      var suggestedTrack = "Java"
+    } else if (php > ruby && php > cSharp && php > java) {
+      var suggestedTrack = "PHP"
     }
     alert(suggestedTrack);
     $("#suggestedTrack").text(suggestedTrack);
