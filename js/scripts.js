@@ -22,6 +22,12 @@ $(document).ready(function(){
     collectData(workType);
     var appType = $("input:radio[name=appType]:checked").val();
     collectData(appType);
+    var proType = $("input:radio[name=proType]:checked").val();
+    collectData(proType);
+    var softwareType = $("input:radio[name=softwareType]:checked").val();
+    collectData(softwareType);
+    var conType = $("input:radio[name=conType]:checked").val();
+    collectData(conType);
 
     if (ruby > cSharp && ruby > java && ruby > php){
       var suggestedTrack = "Ruby on Rails"
