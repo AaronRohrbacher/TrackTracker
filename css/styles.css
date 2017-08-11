@@ -7,3 +7,10 @@
 #noMatch {
   display:none;
 }
+.googleFont {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+#header {
+  text-align:center;
+}
