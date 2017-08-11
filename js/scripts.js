@@ -38,8 +38,9 @@ $(document).ready(function(){
     } else if (php > ruby && php > cSharp && php > java) {
       var suggestedTrack = "PHP"
     }
-    $("#surveyForm").toggle();
+    $("#surveyForm").hide();
     $("#suggestedTrack").text(suggestedTrack);
-
+    $("#surveyOutput").slideToggle(2000, function() {
+    });
   });
 });

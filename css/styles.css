@@ -1,3 +1,6 @@
 .formWidthStandard {
   width: 300px;
 }
+#surveyOutput {
+  display:none;
+}
