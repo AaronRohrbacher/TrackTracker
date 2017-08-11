@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/scripts.js"></script>
@@ -13,9 +13,9 @@
       <div class="row" id="header">
         <img src="img/epicodus.png" />
         <div class="well">
-          <h1 class="googleFont">TrackTracker!</h1>
+          <h1 class="googleFont">TrackTracker</h1>
           <h2>"Epicodus's new tool for <span class="googleFont">tracking your track!</span>"</h2>
-        </div>
+        </div><!--End Well-->
       </div><!--End Row-->
       <div class="row">
         <form id="surveyForm">
@@ -152,12 +152,20 @@
           </div><!--End form-group-->
         </form><!--End Form-->
         <div id = "surveyOutput">
-          <h1><span class="name"></span>We've tracked your track!</h1>
+          <div class="alert alert-success" role="alert">
+          <p><strong>Congratulations, <span class="name"></span>!</strong> We've tracked your track!</h1>
+          </div>
           <h2>Based on your responses, Epicodus suggests our <span id="suggestedTrack"></span> track.</h2>
+          <div id="trackImages">
+            <img src="img/intro.png" alt ="intro">
+            <img src="img/js.png" alt = "javascript">
+          </div>
         </div>
         <div id ="noMatch">
-          <h1><span class="name"></span>We were unable to tack your track!</h1>
-          <h2>Based on your responses, Epicodus was unable to match you to an ideal track perfectly. Here are some suggestions based on your survey responses.</h2>
+          <div class="alert alert-danger" role="alert">
+            <p><strong>We're sorry, <span class="name"></span>!</strong> We were unable to directly track your track.</p>
+          </div>
+          <h2>Based on your responses, Epicodus was unable to match you to an ideal track perfectly. Perhaps you can choose better based on your survey results:</h2>
           </div>
         </div>
       </div><!--End Row-->
