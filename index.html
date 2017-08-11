@@ -13,7 +13,7 @@
         <form id="surveyForm">
           <div class="form-group">
             <label for="name">Please enter your full name:</label>
-            <input class="form-control formWidthStandard" type="text" id="name">
+            <input id="name" class="form-control formWidthStandard" type="text" >
             <p><strong>What is your preferred working environment?</strong></p>
             <div class="radio">
               <label>
@@ -144,11 +144,11 @@
           </div><!--End form-group-->
         </form><!--End Form-->
         <div id = "surveyOutput">
-          <h1>We've tracked your track!</h1>
+          <h1><span class="name"></span>We've tracked your track!</h1>
           <h2>Based on your responses, Epicodus suggests our <span id="suggestedTrack"></span> track.</h2>
         </div>
         <div id ="noMatch">
-          <h1>We were unable to tack your track!</h1>
+          <h1><span class="name"></span>We were unable to tack your track!</h1>
           <h2>Based on your responses, Epicodus was unable to match you to an ideal track perfectly. Here are some suggestions based on your survey responses.</h2>
           </div>
         </div>

@@ -6,6 +6,11 @@ $(document).ready(function(){
     var java = 0;
     var php = 0;
     var suggestedTrack = null;
+    var name = $("input#name").val();
+    var name = name.split(" ")[0];;
+
+
+
     var collectData = function(surveyResponse) {
       if (surveyResponse === "ruby") {
         ruby ++;
@@ -48,5 +53,6 @@ $(document).ready(function(){
       $("#surveyOutput").slideToggle(2000, function() {
       });
     }
+    $(".name").text(name+", ");
   });
 });
