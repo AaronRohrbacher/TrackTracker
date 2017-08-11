@@ -5,7 +5,7 @@ $(document).ready(function(){
     var cSharp = 0;
     var java = 0;
     var php = 0;
-    alert("hello!");
+
     var collectData = function(surveyResponse) {
       if (surveyResponse === "ruby") {
         ruby ++;
@@ -38,7 +38,7 @@ $(document).ready(function(){
     } else if (php > ruby && php > cSharp && php > java) {
       var suggestedTrack = "PHP"
     }
-    alert(suggestedTrack);
+    $("#surveyForm").toggle();
     $("#suggestedTrack").text(suggestedTrack);
 
   });
