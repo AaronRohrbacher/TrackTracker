@@ -9,8 +9,6 @@ $(document).ready(function(){
     var name = $("input#name").val();
     var name = name.split(" ")[0];;
 
-
-
     var collectData = function(surveyResponse) {
       if (surveyResponse === "ruby") {
         ruby ++;
@@ -34,25 +32,29 @@ $(document).ready(function(){
     var conType = $("input:radio[name=conType]:checked").val();
     collectData(conType);
 
-    if (ruby > cSharp && ruby > java && ruby > php){
-      var suggestedTrack = "Ruby on Rails";
-    } else if (cSharp > java && cSharp > php && cSharp > ruby) {
-      var suggestedTrack = "C#/.NET";
-    } else if (java > php && java > ruby && java > cSharp) {
-      var suggestedTrack = "Java";
-    } else if (php > ruby && php > cSharp && php > java) {
-      var suggestedTrack = "PHP";
-    } else if (!suggestedTrack) {
-      $("#noMatch").slideToggle(2000, function() {
-      });
-      $("#noMatch").append("<ul><li>Ruby on Rails: "+ruby+" out of 5</li><li>C#/.NET: "+cSharp+" out of 5</li><li>PHP: "+php+" out of 5</li><li>Java/Android: "+java+" out of 5</li></ul>");
-    }
-    $("#surveyForm").hide();
-    if (suggestedTrack){
-      $("#suggestedTrack").text(suggestedTrack);
-      $("#surveyOutput").slideToggle(2000, function() {
-      });
-    }
-    $(".name").text(name+", ");
+    if (name) {
+      if (ruby > cSharp && ruby > java && ruby > php){
+        var suggestedTrack = "Ruby on Rails";
+      } else if (cSharp > java && cSharp > php && cSharp > ruby) {
+        var suggestedTrack = "C#/.NET";
+      } else if (java > php && java > ruby && java > cSharp) {
+        var suggestedTrack = "Java";
+      } else if (php > ruby && php > cSharp && php > java) {
+        var suggestedTrack = "PHP";
+      } else if (!suggestedTrack) {
+        $("#noMatch").slideToggle(2000, function() {
+        });
+        $("#noMatch").append("<ul><li>Ruby on Rails: "+ruby+" out of 5</li><li>C#/.NET: "+cSharp+" out of 5</li><li>PHP: "+php+" out of 5</li><li>Java/Android: "+java+" out of 5</li></ul>");
+      }
+      $("#surveyForm").hide();
+      if (suggestedTrack){
+        $("#suggestedTrack").text(suggestedTrack);
+        $("#surveyOutput").slideToggle(2000, function() {
+        });
+      }
+      $(".name").text(name+", ");
+  } else {
+    alert("Please enter your name.")
+  }
   });
 });
