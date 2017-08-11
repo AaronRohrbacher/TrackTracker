@@ -11,10 +11,11 @@
   <body>
     <div class= "container">
       <div class="row" id="header">
-        <img src="img/epicodus.png" />
+        <img src="img/epicodus.png" alt = "epicodus"/>
         <div class="well">
           <h1 class="googleFont">TrackTracker</h1>
           <h2>"Epicodus's new tool for <span class="googleFont">tracking your track!</span>"</h2>
+          <h3>Please complete the questionnaire:</h3>
         </div><!--End Well-->
       </div><!--End Row-->
       <div class="row">
@@ -153,21 +154,20 @@
         </form><!--End Form-->
         <div id = "surveyOutput">
           <div class="alert alert-success" role="alert">
-          <p><strong>Congratulations, <span class="name"></span>!</strong> We've tracked your track!</h1>
+          <p><strong>Congratulations, <span class="name"></span>!</strong> We've tracked your track!</p>
           </div>
           <h2>Based on your responses, Epicodus suggests our <span id="suggestedTrack"></span> track.</h2>
           <div id="trackImages">
             <img src="img/intro.png" alt ="intro">
             <img src="img/js.png" alt = "javascript">
           </div>
-        </div>
+        </div><!--End surveyOutput-->
         <div id ="noMatch">
           <div class="alert alert-danger" role="alert">
             <p><strong>We're sorry, <span class="name"></span>!</strong> We were unable to directly track your track.</p>
-          </div>
+          </div><!--End Alert-->
           <h2>Based on your responses, Epicodus was unable to match you to an ideal track perfectly. Perhaps you can choose better based on your survey results:</h2>
-          </div>
-        </div>
+        </div><!--End noMatch-->
       </div><!--End Row-->
     </div><!--End Container-->
   </body>

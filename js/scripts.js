@@ -50,7 +50,7 @@ $(document).ready(function(){
         var suggestedTrack = "PHP/Drupal";
         var trackImage = phpImage;
       } else if (!suggestedTrack) {
-        $("#noMatch").slideToggle(1000, function() {
+        $("#noMatch").fadeIn(1000, function() {
         });
         $("#noMatch").append("<ul><li><img src='img/ruby.png'> Ruby on Rails: "+ruby+" out of 5</li><li><img src='img/csharp.png'> C#/.NET: "+cSharp+" out of 5</li><li><img src='img/php.png' width='100px'> PHP/Drupal: "+php+" out of 5</li><li><img src='img/java.png'> Java/Android: "+java+" out of 5</li></ul>");
       }
@@ -58,7 +58,7 @@ $(document).ready(function(){
       if (suggestedTrack){
         $("#trackImages").append(trackImage);
         $("#suggestedTrack").text(suggestedTrack);
-        $("#surveyOutput").slideToggle(1000, function() {
+        $("#surveyOutput").fadeIn(1000, function() {
         });
       }
       $(".name").text(name);
